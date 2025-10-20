@@ -1,0 +1,58 @@
+{
+  "name": "@uni-ai/sdk",
+  "version": "0.1.0",
+  "description": "Uni AI SDK - Secure, portable AI framework for TypeScript",
+  "keywords": [
+    "ai",
+    "sdk",
+    "openai",
+    "anthropic",
+    "llm",
+    "streaming",
+    "secure",
+    "platform-agnostic"
+  ],
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/uni-ai/sdk",
+    "directory": "packages/core"
+  },
+  "license": "MIT",
+  "author": "Uni AI",
+  "type": "module",
+  "exports": {
+    ".": {
+      "types": "./dist/index.d.ts",
+      "import": "./dist/index.js"
+    },
+    "./providers": {
+      "types": "./dist/providers/index.d.ts",
+      "import": "./dist/providers/index.js"
+    }
+  },
+  "main": "./dist/index.js",
+  "types": "./dist/index.d.ts",
+  "files": [
+    "dist"
+  ],
+  "scripts": {
+    "build": "tsup",
+    "dev": "tsup --watch",
+    "test": "vitest",
+    "test:coverage": "vitest --coverage",
+    "lint": "tsc --noEmit",
+    "clean": "rm -rf dist .turbo node_modules"
+  },
+  "dependencies": {
+    "zod": "^3.22.4"
+  },
+  "devDependencies": {
+    "@types/node": "^20.11.0",
+    "tsup": "^8.0.1",
+    "typescript": "^5.3.3",
+    "vitest": "^1.2.0"
+  },
+  "engines": {
+    "node": ">=18.0.0"
+  }
+}
