@@ -10,7 +10,8 @@
     "deploy": "netlify deploy --prod"
   },
   "dependencies": {
-    "@uni-ai/sdk": "file:../../packages/core"
+    "@uni-ai/sdk": "file:../../packages/core",
+    "@uni-ai/netlify": "file:../../packages/netlify"
   },
   "devDependencies": {
     "netlify-cli": "^17.10.1"

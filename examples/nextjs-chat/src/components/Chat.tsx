@@ -5,7 +5,9 @@ import type { Message } from '@uni-ai/sdk'
 import styles from './Chat.module.css'
 
 export default function Chat() {
-  const [model, setModel] = useState<'gpt-4' | 'gpt-3.5-turbo' | 'claude-3-5-sonnet'>('gpt-4')
+  const [model, setModel] = useState<
+    'gpt-4' | 'gpt-3.5-turbo' | 'claude-3-5-sonnet' | 'gemini-2.0-flash' | 'gemini-pro' | 'llama3.2'
+  >('gpt-4')
   const [messages, setMessages] = useState<Message[]>([
     {
       role: 'system',
@@ -90,9 +92,12 @@ export default function Chat() {
           className={styles.select}
           disabled={isLoading}
         >
-          <option value="gpt-4">GPT-4</option>
-          <option value="gpt-3.5-turbo">GPT-3.5 Turbo</option>
-          <option value="claude-3-5-sonnet">Claude 3.5 Sonnet</option>
+          <option value="gpt-4">GPT-4 (OpenAI)</option>
+          <option value="gpt-3.5-turbo">GPT-3.5 Turbo (OpenAI)</option>
+          <option value="claude-3-5-sonnet">Claude 3.5 Sonnet (Anthropic)</option>
+          <option value="gemini-2.0-flash">Gemini 2.0 Flash (Google)</option>
+          <option value="gemini-pro">Gemini Pro (Google)</option>
+          <option value="llama3.2">Llama 3.2 (Ollama - Local)</option>
         </select>
         <span className={styles.badge}>Strict Security</span>
       </div>
