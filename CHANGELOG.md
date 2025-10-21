@@ -111,12 +111,52 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
   - TypeScript usage examples
   - Real-world authentication examples
 
+#### Additional AI Providers (Week 6)
+- **Google Gemini Provider**: Full Gemini API integration
+  - Complete GeminiProvider implementation
+  - REST API integration (generativelanguage.googleapis.com/v1beta)
+  - generateContent and streamGenerateContent endpoints
+  - Support for Gemini 2.0 Flash, 1.5 Pro, 1.5 Flash models
+  - Model alias: gemini-pro points to latest
+  - Message format conversion (Uni AI → Gemini format)
+  - Automatic system message handling
+  - Full streaming support with Server-Sent Events
+  - Generation config support (temperature, maxTokens, topP, stopSequences)
+  - Usage metadata extraction (promptTokenCount, candidatesTokenCount)
+  - Authentication via GEMINI_API_KEY or GOOGLE_API_KEY
+  - Error handling and validation
+  - 4 models registered: gemini-2.0-flash, gemini-1.5-pro, gemini-1.5-flash, gemini-pro
+- **Ollama Provider**: Local model deployment support
+  - Complete OllamaProvider implementation
+  - Local model support (default: http://localhost:11434)
+  - Customizable base URL via OLLAMA_BASE_URL environment variable
+  - Dual endpoint support (/api/chat and /api/generate)
+  - Automatic endpoint selection (chat vs generate based on context)
+  - Support for Llama 2/3, Mistral, Mixtral, CodeLlama, Phi, Qwen
+  - Full streaming support with line-delimited JSON responses
+  - Options mapping (temperature → temperature, topP → top_p, maxTokens → num_predict)
+  - Usage tracking (prompt_eval_count, eval_count)
+  - Chat and completion modes
+  - No API keys required (local deployment)
+  - Privacy-focused (runs entirely locally)
+  - 8 models registered: llama3.2, llama3.1, llama2, mistral, mixtral, codellama, phi, qwen
+- **Provider Registry Updates**:
+  - Registered 4 Gemini models
+  - Registered 8 Ollama models
+  - Total providers: 4 (OpenAI, Anthropic, Gemini, Ollama)
+  - Total models: 23+ across all providers
+  - Exported GeminiProvider and OllamaProvider from providers/index
+- **Benefits**:
+  - Google Gemini: Access to Google's latest AI models
+  - Ollama: Private/local model deployment without cloud dependencies
+  - Platform-agnostic: Demonstrates core value proposition
+  - Developer choice: Cloud vs local, proprietary vs open source
+
 ### Planned
 - Live demo deployments with public URLs
-- Google Gemini provider
-- Ollama provider (local models)
 - Streaming support in React hooks
 - Documentation website (VitePress)
+- Mistral AI provider
 
 ---
 
