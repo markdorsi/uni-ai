@@ -186,19 +186,23 @@ npm install @uni-ai/react
 import { useChat } from '@uni-ai/react'
 
 function ChatComponent() {
-  const { messages, input, handleSubmit, isLoading } = useChat({
+  const { messages, input, handleInputChange, handleSubmit, isLoading } = useChat({
     model: 'gpt-4',
     security: 'strict'
   })
 
   return (
     <div>
-      {messages.map(m => (
-        <div key={m.id}>{m.content}</div>
+      {messages.map((m, i) => (
+        <div key={i}>
+          <strong>{m.role}:</strong> {m.content}
+        </div>
       ))}
       <form onSubmit={handleSubmit}>
-        <input value={input} onChange={(e) => setInput(e.target.value)} />
-        <button disabled={isLoading}>Send</button>
+        <input value={input} onChange={handleInputChange} />
+        <button disabled={isLoading}>
+          {isLoading ? 'Sending...' : 'Send'}
+        </button>
       </form>
     </div>
   )
