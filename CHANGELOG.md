@@ -77,13 +77,46 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
   - Render (alternative for APIs)
   - Fly.io (global API deployment)
 
+#### Platform Adapters (Week 5)
+- **@uni-ai/netlify Package**: Netlify-specific adapters
+  - createEdgeHandler() for Netlify Edge Functions
+  - createServerlessHandler() for Netlify Functions
+  - streamResponse() helper for Server-Sent Events
+  - Automatic request/response handling
+  - Context extraction (IP, cookies, geo data)
+  - Custom security presets support
+  - Custom error handling
+  - Full TypeScript support
+  - 350+ line comprehensive README
+  - Bundle: 5.02 KB
+- **@uni-ai/vercel Package**: Vercel-specific adapters
+  - createEdgeHandler() for Vercel Edge Runtime
+  - createApiHandler() for Next.js API Routes
+  - streamResponse() helper for Edge Runtime
+  - Next.js 14 App Router support
+  - Pages Router support
+  - VercelRequest/VercelResponse types
+  - Custom user ID extraction
+  - Automatic security integration
+  - Full TypeScript support
+  - 500+ line comprehensive README with examples
+  - Authentication patterns
+  - Middleware integration examples
+  - Edge vs API Routes comparison
+  - Bundle: 4.60 KB
+- **Documentation**: 850+ lines of adapter documentation
+  - API reference for both packages
+  - Deployment instructions
+  - Security best practices
+  - TypeScript usage examples
+  - Real-world authentication examples
+
 ### Planned
 - Live demo deployments with public URLs
 - Google Gemini provider
 - Ollama provider (local models)
 - Streaming support in React hooks
 - Documentation website (VitePress)
-- Platform adapters (Netlify, Vercel packages)
 
 ---
 
