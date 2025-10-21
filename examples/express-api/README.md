@@ -4,24 +4,43 @@ A production-ready REST API built with Express and Uni AI SDK, demonstrating how
 
 ## 🚀 Deploy
 
+### One-Click Deploy
+
 [![Deploy on Railway](https://railway.app/button.svg)](https://railway.app/template/uni-ai-express-api?referralCode=uni-ai)
 
-Click the button above to deploy this example to Railway in one click!
+Click the button above to deploy to Railway in one click! (~4 minutes)
 
 **Alternative Platforms:**
-- [Deploy to Render](https://render.com/deploy?repo=https://github.com/markdorsi/uni-ai/tree/main/examples/express-api)
-- [Deploy to Fly.io](https://fly.io/docs/hands-on/install-flyctl/)
+- [Render](https://render.com/deploy?repo=https://github.com/markdorsi/uni-ai/tree/main/examples/express-api) - Alternative backend platform
+- [Fly.io](https://fly.io/docs/hands-on/install-flyctl/) - Global edge deployment
+
+### CLI Deploy
+
+Use the provided deployment script:
+
+```bash
+cd examples/express-api
+./deploy.sh
+```
+
+The script will guide you through authentication, building, and deploying to Railway.
+
+### Manual Deploy
+
+See the [Live Deployment Guide](../../LIVE_DEPLOYMENT.md) for detailed instructions on deploying to Railway, Render, or Fly.io.
 
 ## Features
 
 - ✅ **RESTful API Design** - Clean, intuitive endpoints
+- ✅ **Multiple AI Models** - GPT-4, GPT-3.5 Turbo, Claude 3.5 Sonnet, Gemini 2.0 Flash, Gemini Pro, Llama 3.2
+- ✅ **4 AI Providers** - OpenAI, Anthropic, Google Gemini, and Ollama (local)
 - ✅ **TypeScript** - Full type safety
 - ✅ **Security Built-In** - Helmet, CORS, rate limiting, PII detection
 - ✅ **Error Handling** - Comprehensive error middleware
 - ✅ **Multiple Endpoints** - Chat and completion endpoints
 - ✅ **Health Checks** - Monitoring and uptime tracking
 - ✅ **Hot Reload** - Development mode with tsx watch
-- ✅ **Production Ready** - Build and deploy to any platform
+- ✅ **Production Ready** - Deploy to Railway, Render, or Fly.io
 
 ## Tech Stack
 

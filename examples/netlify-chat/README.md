@@ -4,19 +4,43 @@ A beautiful, serverless chat application built with Netlify Edge Functions and U
 
 ## 🚀 Deploy
 
+### One-Click Deploy
+
 [![Deploy to Netlify](https://www.netlify.com/img/deploy/button.svg)](https://app.netlify.com/start/deploy?repository=https://github.com/markdorsi/uni-ai&base=examples/netlify-chat)
 
-Click the button above to deploy this example to Netlify in one click!
+Click the button above to deploy to Netlify in one click! (~5 minutes)
+
+**After deployment:**
+1. Go to Site Settings → Environment Variables
+2. Add your API keys (OPENAI_API_KEY, ANTHROPIC_API_KEY, GEMINI_API_KEY)
+3. Trigger a redeploy
+
+### CLI Deploy
+
+Use the provided deployment script:
+
+```bash
+cd examples/netlify-chat
+./deploy.sh
+```
+
+The script will guide you through authentication, building, and deploying.
+
+### Manual Deploy
+
+See the [Live Deployment Guide](../../LIVE_DEPLOYMENT.md) for detailed instructions.
 
 ## Features
 
-- ✅ **Edge Computing** - Runs on Netlify's global edge network
+- ✅ **Edge Computing** - Runs on Netlify's global edge network (100+ locations)
 - ✅ **Beautiful UI** - Modern gradient design with animations
-- ✅ **Multiple AI Models** - Switch between GPT-4, GPT-3.5, and Claude
+- ✅ **Multiple AI Models** - Switch between GPT-4, GPT-3.5 Turbo, Claude 3.5 Sonnet, Gemini 2.0 Flash, Gemini Pro, and Llama 3.2
+- ✅ **4 AI Providers** - OpenAI, Anthropic, Google Gemini, and Ollama (local)
 - ✅ **Zero Backend Setup** - Serverless edge functions
+- ✅ **Platform Adapter** - Uses @uni-ai/netlify for simplified deployment
 - ✅ **Strict Security** - PII detection, rate limiting, validation
 - ✅ **Static Frontend** - Pure HTML/CSS/JavaScript
-- ✅ **Global Performance** - Low latency worldwide
+- ✅ **Global Performance** - <50ms latency worldwide
 - ✅ **One-Click Deploy** - Deploy to Netlify in seconds
 
 ## Tech Stack

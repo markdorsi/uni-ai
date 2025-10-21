@@ -4,15 +4,35 @@ A modern chat application built with Next.js 14 and Uni AI SDK, demonstrating ho
 
 ## 🚀 Deploy
 
-[![Deploy with Vercel](https://vercel.com/button)](https://vercel.com/new/clone?repository-url=https://github.com/markdorsi/uni-ai/tree/main/examples/nextjs-chat&env=OPENAI_API_KEY&envDescription=OpenAI%20API%20key%20for%20GPT%20models&project-name=uni-ai-chat&repository-name=uni-ai-chat&root-directory=examples/nextjs-chat)
+### One-Click Deploy
 
-Click the button above to deploy this example to Vercel in one click!
+[![Deploy with Vercel](https://vercel.com/button)](https://vercel.com/new/clone?repository-url=https://github.com/markdorsi/uni-ai/tree/main/examples/nextjs-chat&env=OPENAI_API_KEY,ANTHROPIC_API_KEY,GEMINI_API_KEY&envDescription=API%20keys%20for%20AI%20providers&project-name=uni-ai-nextjs-chat&repository-name=uni-ai-nextjs-chat)
+
+Click the button above to deploy to Vercel in one click! (~3 minutes)
+
+### CLI Deploy
+
+Use the provided deployment script:
+
+```bash
+cd examples/nextjs-chat
+./deploy.sh
+```
+
+The script will guide you through authentication, building, and deploying.
+
+### Manual Deploy
+
+See the [Live Deployment Guide](../../LIVE_DEPLOYMENT.md) for detailed instructions.
 
 ## Features
 
-- ✅ **Multiple AI Models** - Switch between GPT-4, GPT-3.5 Turbo, and Claude 3.5 Sonnet
+- ✅ **Multiple AI Models** - Switch between GPT-4, GPT-3.5 Turbo, Claude 3.5 Sonnet, Gemini 2.0 Flash, Gemini Pro, and Llama 3.2
+- ✅ **4 AI Providers** - OpenAI, Anthropic, Google Gemini, and Ollama (local)
 - ✅ **Strict Security** - Built-in PII detection, rate limiting, and input validation
 - ✅ **Server-Side API Keys** - API keys stay secure on the server
+- ✅ **Platform Adapter** - Uses @uni-ai/vercel for simplified deployment
+- ✅ **Edge Runtime** - Optimized for Vercel Edge Functions
 - ✅ **Modern UI** - Beautiful gradient design with animations
 - ✅ **Real-time Chat** - Instant responses with loading states
 - ✅ **Type-Safe** - Full TypeScript support

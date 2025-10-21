@@ -129,8 +129,8 @@ console.log(result.finishReason)
 
 - ✅ **OpenAI** - `gpt-4`, `gpt-4-turbo`, `gpt-4o`, `gpt-3.5-turbo`
 - ✅ **Anthropic** - `claude-3-5-sonnet-20241022`, `claude-3-opus-20240229`, `claude-3-sonnet-20240229`, `claude-3-haiku-20240307`
-- 🚧 **Google Gemini** - Coming soon
-- 🚧 **Ollama** (Local models) - Coming soon
+- ✅ **Google Gemini** - `gemini-2.0-flash`, `gemini-1.5-pro`, `gemini-1.5-flash`, `gemini-pro`
+- ✅ **Ollama** (Local models) - `llama3.2`, `llama3.1`, `llama2`, `mistral`, `mixtral`, `codellama`, `phi`, `qwen`
 
 ### Using Different Providers
 
@@ -260,13 +260,20 @@ ANTHROPIC_API_KEY=sk-ant-...
 
 ## Examples
 
-Explore our production-ready examples:
+Explore our production-ready examples with **6 AI models** across **4 providers**:
 
-| Example | Description | Deploy |
-|---------|-------------|--------|
-| **[Next.js Chat](examples/nextjs-chat)** | Modern chat UI with App Router | [![Deploy to Vercel](https://vercel.com/button)](https://vercel.com/new/clone?repository-url=https://github.com/uni-ai/sdk/tree/main/examples/nextjs-chat) |
-| **[Netlify Edge](examples/netlify-chat)** | Serverless edge chat application | [![Deploy to Netlify](https://www.netlify.com/img/deploy/button.svg)](https://app.netlify.com/start/deploy?repository=https://github.com/uni-ai/sdk/tree/main/examples/netlify-chat) |
-| **[Express API](examples/express-api)** | RESTful API with TypeScript | [Deploy Guide](examples/express-api#deployment) |
+| Example | Description | Models | Deploy |
+|---------|-------------|--------|--------|
+| **[Next.js Chat](examples/nextjs-chat)** | Modern chat UI with App Router | GPT-4, Claude, Gemini, Llama | [![Deploy](https://vercel.com/button)](https://vercel.com/new/clone?repository-url=https://github.com/markdorsi/uni-ai/tree/main/examples/nextjs-chat&env=OPENAI_API_KEY,ANTHROPIC_API_KEY,GEMINI_API_KEY) |
+| **[Netlify Edge](examples/netlify-chat)** | Serverless edge chat application | GPT-4, Claude, Gemini, Llama | [![Deploy](https://www.netlify.com/img/deploy/button.svg)](https://app.netlify.com/start/deploy?repository=https://github.com/markdorsi/uni-ai&base=examples/netlify-chat) |
+| **[Express API](examples/express-api)** | RESTful API with TypeScript | GPT-4, Claude, Gemini, Llama | [![Deploy](https://railway.app/button.svg)](https://railway.app/template/uni-ai-express-api) |
+
+### Quick Deploy
+
+Each example includes:
+- 🚀 **One-click deploy buttons** - Deploy in ~3 minutes
+- 📜 **Deployment scripts** - Run `./deploy.sh` in any example
+- 📖 **Detailed guides** - See [LIVE_DEPLOYMENT.md](LIVE_DEPLOYMENT.md)
 
 📚 **See [EXAMPLES.md](EXAMPLES.md)** for detailed guides, screenshots, and live demos.
 
