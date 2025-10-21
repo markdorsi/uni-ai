@@ -2,7 +2,7 @@
 
 **Last Updated**: 2025-10-20
 **Version**: 0.1.0-alpha
-**Status**: Week 3 - CI/CD Complete ✅
+**Status**: Week 3 - CI/CD & Examples In Progress ✅
 
 ---
 
@@ -154,6 +154,16 @@ Build the secure, platform-agnostic standard for AI applications.
 - **Build Time**: <2 minutes
 - **Bundle Sizes**: ✅ All within limits
 
+### Example Applications
+✅ **Next.js Chat App**
+- Modern Next.js 14 with App Router
+- Beautiful gradient UI with animations
+- Multiple AI models (GPT-4, GPT-3.5, Claude 3.5)
+- Server-side API route for security
+- TypeScript + CSS Modules
+- Comprehensive README with deployment guide
+- Ready for Vercel/Netlify deployment
+
 ---
 
 ## 📋 Roadmap
@@ -181,7 +191,7 @@ All Week 2 goals achieved:
 - [ ] NPM publishing workflow
 
 **Priority 2: Examples**
-- [ ] Next.js chat app
+- ✅ Next.js chat app
 - [ ] Netlify Edge example
 - [ ] Express API example
 
