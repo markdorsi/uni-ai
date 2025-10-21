@@ -1,5 +1,6 @@
 import type { LanguageModelProvider } from '../types/index.js'
 import { createOpenAI } from './openai.js'
+import { createAnthropic } from './anthropic.js'
 
 /**
  * Provider registry
@@ -17,10 +18,14 @@ function registerDefaultProviders() {
   providers.set('gpt-4o', openai)
   providers.set('gpt-3.5-turbo', openai)
 
-  // TODO: Anthropic models
-  // const anthropic = createAnthropic()
-  // providers.set('claude-3-5-sonnet', anthropic)
-  // providers.set('claude-3-opus', anthropic)
+  // Anthropic models
+  const anthropic = createAnthropic()
+  providers.set('claude-3-5-sonnet-20241022', anthropic)
+  providers.set('claude-3-5-sonnet', anthropic) // Alias
+  providers.set('claude-3-opus-20240229', anthropic)
+  providers.set('claude-3-opus', anthropic) // Alias
+  providers.set('claude-3-sonnet-20240229', anthropic)
+  providers.set('claude-3-haiku-20240307', anthropic)
 }
 
 // Register on module load

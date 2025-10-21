@@ -29,12 +29,16 @@ npm install @uni-ai/sdk
 ```typescript
 import { ai } from '@uni-ai/sdk'
 
-// Simple text generation
+// Works with OpenAI
 const text = await ai('gpt-4', 'Explain quantum computing in simple terms')
 console.log(text)
 
+// Works with Anthropic/Claude
+const claude = await ai('claude-3-5-sonnet', 'Write a haiku about AI')
+console.log(claude)
+
 // Streaming
-for await (const chunk of ai.stream('gpt-4', 'Write a haiku about AI')) {
+for await (const chunk of ai.stream('gpt-4', 'Tell me a story')) {
   process.stdout.write(chunk)
 }
 ```
@@ -101,10 +105,31 @@ console.log(result.finishReason)
 
 ## Supported Providers
 
-- ✅ **OpenAI** (GPT-4, GPT-4 Turbo, GPT-4o, GPT-3.5 Turbo)
-- 🚧 **Anthropic** (Claude 3.5 Sonnet, Claude 3 Opus) - Coming soon
+- ✅ **OpenAI** - `gpt-4`, `gpt-4-turbo`, `gpt-4o`, `gpt-3.5-turbo`
+- ✅ **Anthropic** - `claude-3-5-sonnet-20241022`, `claude-3-opus-20240229`, `claude-3-sonnet-20240229`, `claude-3-haiku-20240307`
 - 🚧 **Google Gemini** - Coming soon
 - 🚧 **Ollama** (Local models) - Coming soon
+
+### Using Different Providers
+
+```typescript
+import { ai } from '@uni-ai/sdk'
+
+// OpenAI
+const gpt = await ai('gpt-4', 'Hello')
+
+// Anthropic/Claude
+const claude = await ai('claude-3-5-sonnet', 'Hello')
+
+// Both use the same API!
+```
+
+Set your API keys:
+
+```bash
+export OPENAI_API_KEY=sk-...
+export ANTHROPIC_API_KEY=sk-ant-...
+```
 
 ## Platform Deployment
 

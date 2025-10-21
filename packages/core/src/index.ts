@@ -42,7 +42,7 @@ export { securityPresets } from './security/presets.js'
 export type { SecurityConfig, SecurityPreset } from './types/index.js'
 
 // Providers
-export { createOpenAI } from './providers/index.js'
+export { createOpenAI, createAnthropic } from './providers/index.js'
 export { registerProvider } from './providers/registry.js'
 
 // Types
@@ -64,3 +64,4 @@ export { SecurityError } from './security/index.js'
 export { ValidationError } from './security/validation.js'
 export { RateLimitError } from './security/rate-limit.js'
 export { OpenAIError } from './providers/openai.js'
+export { AnthropicError } from './providers/anthropic.js'

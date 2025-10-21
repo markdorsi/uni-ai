@@ -2,7 +2,7 @@
 
 **Last Updated**: 2025-10-20
 **Version**: 0.1.0-alpha
-**Status**: Foundation Complete ✅
+**Status**: Week 2 Complete ✅
 
 ---
 
@@ -68,44 +68,57 @@ Build the secure, platform-agnostic standard for AI applications.
 
 ---
 
-## 🚧 In Progress
+## ✅ Completed (Week 2 - Days 1-3)
 
-### Immediate Fixes
+### Testing Infrastructure
+✅ **Vitest Setup**
+- Vitest 3.2.4 with UI and coverage
+- Test fixtures and mocking utilities
+- Coverage reporting (v8)
+- 63 passing tests
+- **78.8% coverage** (exceeded 70% target)
 
-⚠️ **TypeScript Declarations**
-- Issue: DTS generation disabled
-- Impact: No `.d.ts` files exported
-- Priority: High
-- ETA: 1 day
+✅ **Test Suites**
+- AI function tests (10 tests)
+- Security tests (29 tests): PII, rate limiting, validation
+- OpenAI provider tests (10 tests)
+- Anthropic provider tests (14 tests)
 
-⚠️ **Testing**
-- Issue: No test suite yet
-- Impact: Manual testing only
-- Priority: High
-- ETA: 2-3 days
+### TypeScript Declarations
+✅ **DTS Generation**
+- Fixed TypeScript declaration generation
+- Custom tsconfig.build.json for declarations
+- All types exported correctly
+- Full IntelliSense support
+
+### Anthropic Provider
+✅ **Claude Support**
+- Full Messages API implementation
+- Blocking text generation
+- Streaming support (SSE)
+- Models: Claude 3.5 Sonnet, Opus, Sonnet, Haiku
+- System message extraction
+- Usage tracking
+
+✅ **Provider Registry**
+- 10+ model aliases registered
+- Automatic provider selection
+- Custom provider registration
+
+### Documentation
+✅ **Testing Guide** (TESTING.md)
+- Comprehensive testing patterns
+- Mocking strategies
+- Coverage guidelines
+- Best practices
 
 ---
 
 ## 📋 Roadmap
 
-### Week 2 (Oct 21-27)
+### Week 2 (Oct 21-27) - Remaining
 
-**Priority 1: Quality**
-- [ ] Fix TypeScript declaration generation
-- [ ] Add Vitest test suite
-  - [ ] Unit tests for security middleware
-  - [ ] Integration tests for OpenAI provider
-  - [ ] End-to-end tests for ai() function
-- [ ] Set up CI/CD (GitHub Actions)
-- [ ] Add code coverage reporting
-
-**Priority 2: Anthropic Provider**
-- [ ] Implement `createAnthropic()` in `providers/anthropic.ts`
-- [ ] Add Claude 3.5 Sonnet, Claude 3 Opus
-- [ ] Test streaming with Anthropic
-- [ ] Update registry with Claude models
-
-**Priority 3: React Package**
+**Priority 1: React Package**
 - [ ] Create `packages/react/`
 - [ ] Implement `useChat()` hook
   - [ ] Message management
@@ -115,6 +128,14 @@ Build the secure, platform-agnostic standard for AI applications.
 - [ ] Implement `useCompletion()` hook
 - [ ] Build pre-built `<Chat>` component
 - [ ] Add SSR compatibility (Next.js)
+- [ ] React Testing Library tests
+- [ ] Example React app
+
+**Priority 2: CI/CD**
+- [ ] GitHub Actions workflow
+- [ ] Automated testing on PR
+- [ ] Type checking
+- [ ] Bundle size reporting
 
 ### Week 3-4 (Oct 28 - Nov 10)
 
