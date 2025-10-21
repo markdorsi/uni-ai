@@ -2,7 +2,7 @@
 
 **Last Updated**: 2025-10-20
 **Version**: 0.1.0-alpha
-**Status**: Week 3 Complete! 🎉
+**Status**: Week 4 Complete! 🎉
 
 ---
 
@@ -184,6 +184,62 @@ Build the secure, platform-agnostic standard for AI applications.
 
 ---
 
+## ✅ Completed (Week 4 - NPM Publishing & CLI)
+
+### NPM Publishing Infrastructure
+✅ **GitHub Actions Workflow**
+- Automated NPM publishing on release
+- Manual workflow dispatch support
+- Build, test, and publish pipeline
+- NPM_TOKEN secret configuration
+- Public package access (@uni-ai scoped)
+
+✅ **Package Configuration**
+- .npmrc for public access configuration
+- Publish scripts for core and react packages
+- Fixed prepublish hook issues
+- Workspace-compatible installation
+
+### CLI Tool (create-uni-ai-app)
+✅ **Interactive Project Scaffolding**
+- Complete CLI package in packages/cli/
+- Interactive wizard with inquirer.js
+- Colorful terminal output (chalk + ora)
+- Project name validation
+- Automatic .env file creation
+
+✅ **Template System**
+- Reuses existing examples (nextjs, express, netlify)
+- Smart file filtering (skips node_modules, build artifacts)
+- Automatic package.json name update
+- Template-to-example mapping
+
+✅ **Model & API Key Setup**
+- Model selection: GPT-4, GPT-3.5, Claude 3.5 Sonnet
+- Optional API key configuration
+- Automatic provider detection (OpenAI vs Anthropic)
+- Secure password input for API keys
+
+✅ **Automation Features**
+- Automatic npm install (optional with --skip-install)
+- Automatic git initialization (optional with --skip-git)
+- Command-line arguments for automation
+- Beautiful success messages with next steps
+
+✅ **Documentation**
+- Comprehensive CLI README (600+ lines)
+- Usage examples for all templates
+- Troubleshooting section
+- Template comparison table
+
+### Metrics
+- **CLI Bundle**: 6.39 KB executable
+- **Templates**: 3 (Next.js, Express, Netlify)
+- **Documentation**: 600+ lines CLI README
+- **Automation**: Full project setup in <60 seconds
+
+---
+
 ## 📋 Roadmap
 
 ### Week 2 (Oct 21-27) - Complete! 🎉
@@ -199,21 +255,35 @@ All Week 2 goals achieved:
 - [ ] Example Next.js app
 - [ ] CI/CD (GitHub Actions)
 
-### Week 3 (Oct 28 - Nov 3) - In Progress
+### Week 3 (Oct 28 - Nov 3) - Complete! 🎉
 
 **Priority 1: CI/CD**
 - ✅ GitHub Actions workflow
 - ✅ Automated testing on PR
 - ✅ Type checking
 - ✅ Bundle size reporting
-- [ ] NPM publishing workflow
 
 **Priority 2: Examples** - Complete! 🎉
 - ✅ Next.js chat app
 - ✅ Express API example
 - ✅ Netlify Edge example
 
-### Week 3-4 (Oct 28 - Nov 10)
+### Week 4 (Nov 4 - Nov 10) - Complete! 🎉
+
+**NPM Publishing**
+- ✅ GitHub Actions workflow for publishing
+- ✅ NPM configuration (.npmrc)
+- ✅ Publish scripts for packages
+- ✅ Fixed prepublish hook issues
+
+**CLI Tool**
+- ✅ Create `packages/cli/` (create-uni-ai-app)
+- ✅ Interactive project scaffolding wizard
+- ✅ Template support (nextjs, express, netlify)
+- ✅ Model selection and API key setup
+- ✅ Comprehensive CLI documentation
+
+### Week 5 (Nov 11 - Nov 17) - Next Up
 
 **Platform Adapters**
 - [ ] Create `packages/netlify/`
@@ -224,22 +294,11 @@ All Week 2 goals achieved:
   - [ ] API Routes adapter
 - [ ] Test cross-platform deployment
 
-**Examples**
-- [ ] Next.js chat app
-  - [ ] Deploy to Vercel
-  - [ ] Live demo
-- [ ] Netlify Edge chat app
-  - [ ] Deploy to Netlify
-  - [ ] Live demo
-- [ ] Express API server
-  - [ ] GitHub repo
-  - [ ] Docker support
-
-**CLI Tool**
-- [ ] Create `packages/cli/`
-- [ ] Implement `npx uni-ai init`
-- [ ] Implement `npx uni-ai create <template>`
-- [ ] Templates: chat, api, completion
+**Live Deployments**
+- [ ] Next.js chat app → Vercel
+- [ ] Netlify Edge chat → Netlify
+- [ ] Express API → Railway/Render
+- [ ] Live demo URLs
 
 ### Week 5-8 (Nov 11 - Dec 8)
 
@@ -291,15 +350,15 @@ uni-ai/
 uni-ai/
 ├── packages/
 │   ├── core/               ✅ @uni-ai/sdk
-│   ├── react/              🚧 @uni-ai/react
-│   ├── vue/                📅 @uni-ai/vue
+│   ├── react/              ✅ @uni-ai/react
+│   ├── cli/                ✅ create-uni-ai-app
 │   ├── netlify/            📅 @uni-ai/netlify
 │   ├── vercel/             📅 @uni-ai/vercel
-│   └── cli/                📅 uni-ai CLI
+│   └── vue/                📅 @uni-ai/vue
 ├── examples/
-│   ├── nextjs-chat/        📅
-│   ├── netlify-chat/       📅
-│   └── express-api/        📅
+│   ├── nextjs-chat/        ✅
+│   ├── express-api/        ✅
+│   └── netlify-chat/       ✅
 ├── docs/                   📅 VitePress site
 └── benchmarks/             📅
 ```

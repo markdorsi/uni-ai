@@ -7,12 +7,51 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ## [Unreleased]
 
+### Added
+
+#### NPM Publishing Infrastructure (Week 4)
+- **GitHub Actions Workflow**: Automated NPM publishing on release
+  - Manual workflow dispatch support
+  - Build, test, and publish pipeline
+  - NPM_TOKEN secret configuration
+  - Public package access (@uni-ai scoped)
+- **Package Configuration**: .npmrc for npm registry settings
+- **Publish Scripts**: Automated publishing for core and react packages
+- **Fixed**: Prepublish hook issues for workspace installations
+
+#### CLI Tool - create-uni-ai-app (Week 4)
+- **Interactive Wizard**: Full-featured project scaffolding CLI
+  - Project name validation (lowercase, numbers, hyphens only)
+  - Template selection (Next.js, Express, Netlify)
+  - AI model selection (GPT-4, GPT-3.5, Claude 3.5 Sonnet)
+  - Optional API key configuration with secure password input
+- **Template System**: Reuses existing examples for consistency
+  - Smart file filtering (skips node_modules, build artifacts)
+  - Automatic package.json name update
+  - Template-to-example mapping (nextjs → nextjs-chat, etc.)
+- **Automation Features**:
+  - Automatic npm install (optional with --skip-install flag)
+  - Automatic git initialization (optional with --skip-git flag)
+  - .env file creation with API keys
+  - Beautiful success messages with next steps
+- **Command-Line Interface**:
+  - Interactive mode: `npx create-uni-ai-app`
+  - With arguments: `npx create-uni-ai-app my-app --template nextjs`
+  - Colorful output with chalk and ora spinners
+  - Clear error messages and validation
+- **Documentation**: 600+ line comprehensive CLI README
+  - Usage examples for all templates
+  - Template comparison table
+  - Troubleshooting section
+  - Next steps guidance
+- **Bundle**: 6.39KB executable with shebang
+
 ### Planned
-- NPM publishing workflow
 - Google Gemini provider
 - Ollama provider (local models)
 - Streaming support in React hooks
 - Documentation website (VitePress)
+- Platform adapters (Netlify, Vercel)
 
 ---
 
