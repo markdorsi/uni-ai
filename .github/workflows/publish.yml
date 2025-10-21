@@ -1,0 +1,68 @@
+name: Publish to npm
+
+on:
+  release:
+    types: [published]
+  workflow_dispatch:
+    inputs:
+      version:
+        description: 'Version to publish (e.g., 0.1.0)'
+        required: true
+        type: string
+
+jobs:
+  publish:
+    name: Publish Packages
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v4
+
+      - name: Setup Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: '18'
+          registry-url: 'https://registry.npmjs.org'
+          cache: 'npm'
+
+      - name: Install dependencies
+        run: npm ci
+
+      - name: Build packages
+        run: npm run build
+        env:
+          OPENAI_API_KEY: sk-dummy-build-key
+
+      - name: Run tests
+        run: npm run test:ci
+        env:
+          OPENAI_API_KEY: sk-dummy-test-key
+          ANTHROPIC_API_KEY: sk-ant-dummy-test-key
+
+      - name: Check version
+        run: |
+          CORE_VERSION=$(node -p "require('./packages/core/package.json').version")
+          REACT_VERSION=$(node -p "require('./packages/react/package.json').version")
+          echo "Core version: $CORE_VERSION"
+          echo "React version: $REACT_VERSION"
+
+      - name: Publish @uni-ai/sdk
+        run: |
+          cd packages/core
+          npm publish --access public
+        env:
+          NODE_AUTH_TOKEN: ${{ secrets.NPM_TOKEN }}
+
+      - name: Publish @uni-ai/react
+        run: |
+          cd packages/react
+          npm publish --access public
+        env:
+          NODE_AUTH_TOKEN: ${{ secrets.NPM_TOKEN }}
+
+      - name: Create success message
+        run: |
+          echo "✅ Successfully published packages to npm!"
+          echo "- @uni-ai/sdk"
+          echo "- @uni-ai/react"

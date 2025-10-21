@@ -21,7 +21,10 @@
     "clean": "turbo run clean && rm -rf node_modules",
     "changeset": "changeset",
     "version-packages": "changeset version",
-    "release": "turbo run build && changeset publish"
+    "release": "turbo run build && changeset publish",
+    "publish:core": "cd packages/core && npm publish --access public",
+    "publish:react": "cd packages/react && npm publish --access public",
+    "publish:all": "npm run prepublish && npm run publish:core && npm run publish:react"
   },
   "devDependencies": {
     "@changesets/cli": "^2.27.1",

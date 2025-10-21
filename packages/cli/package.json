@@ -1,0 +1,50 @@
+{
+  "name": "create-uni-ai-app",
+  "version": "0.1.0",
+  "description": "Create Uni AI applications with one command",
+  "keywords": [
+    "ai",
+    "cli",
+    "create-app",
+    "scaffolding",
+    "openai",
+    "anthropic",
+    "uni-ai"
+  ],
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/uni-ai/sdk",
+    "directory": "packages/cli"
+  },
+  "license": "MIT",
+  "author": "Uni AI",
+  "type": "module",
+  "bin": {
+    "create-uni-ai-app": "./dist/index.js"
+  },
+  "files": [
+    "dist",
+    "templates"
+  ],
+  "scripts": {
+    "build": "tsup",
+    "dev": "tsup --watch",
+    "test": "echo \"No tests yet\"",
+    "lint": "tsc --noEmit"
+  },
+  "dependencies": {
+    "chalk": "^5.3.0",
+    "commander": "^11.1.0",
+    "inquirer": "^9.2.12",
+    "ora": "^7.0.1"
+  },
+  "devDependencies": {
+    "@types/inquirer": "^9.0.7",
+    "@types/node": "^20.11.0",
+    "tsup": "^8.0.1",
+    "typescript": "^5.3.3"
+  },
+  "engines": {
+    "node": ">=18.0.0"
+  }
+}
