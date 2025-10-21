@@ -1,0 +1,21 @@
+{
+  "name": "netlify-chat-example",
+  "version": "0.1.0",
+  "private": true,
+  "type": "module",
+  "description": "Netlify Edge Functions chat example using Uni AI SDK",
+  "scripts": {
+    "dev": "netlify dev",
+    "build": "netlify build",
+    "deploy": "netlify deploy --prod"
+  },
+  "dependencies": {
+    "@uni-ai/sdk": "file:../../packages/core"
+  },
+  "devDependencies": {
+    "netlify-cli": "^17.10.1"
+  },
+  "engines": {
+    "node": ">=18.0.0"
+  }
+}

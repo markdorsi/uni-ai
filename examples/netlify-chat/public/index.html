@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Uni AI Chat - Netlify Edge</title>
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <main class="container">
+    <header class="header">
+      <h1>Uni AI Chat</h1>
+      <p class="tagline">Secure. Portable. Open.</p>
+      <p class="subtitle">Powered by Netlify Edge Functions</p>
+    </header>
+
+    <div class="chat-container">
+      <div class="chat-header">
+        <label for="model-select">Model:</label>
+        <select id="model-select" class="model-select">
+          <option value="gpt-4">GPT-4</option>
+          <option value="gpt-3.5-turbo">GPT-3.5 Turbo</option>
+          <option value="claude-3-5-sonnet">Claude 3.5 Sonnet</option>
+        </select>
+        <span class="badge">Strict Security</span>
+      </div>
+
+      <div id="error" class="error hidden"></div>
+
+      <div id="messages" class="messages">
+        <div class="message assistant-message">
+          <div class="message-role">🤖 AI</div>
+          <div class="message-content">
+            Hello! I'm your AI assistant. How can I help you today?
+          </div>
+        </div>
+      </div>
+
+      <form id="chat-form" class="chat-form">
+        <input
+          type="text"
+          id="message-input"
+          class="message-input"
+          placeholder="Type your message..."
+          autocomplete="off"
+        />
+        <button type="submit" id="send-button" class="send-button">
+          Send
+        </button>
+      </form>
+    </div>
+
+    <footer class="footer">
+      <p>
+        Built with
+        <a href="https://github.com/uni-ai/sdk" target="_blank" rel="noopener noreferrer">
+          Uni AI SDK
+        </a>
+        on Netlify Edge Functions
+      </p>
+    </footer>
+  </main>
+
+  <script src="app.js"></script>
+</body>
+</html>

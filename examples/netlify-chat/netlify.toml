@@ -1,0 +1,10 @@
+[build]
+  publish = "public"
+
+[[edge_functions]]
+  path = "/api/chat"
+  function = "chat"
+
+[dev]
+  framework = "#static"
+  targetPort = 8888
