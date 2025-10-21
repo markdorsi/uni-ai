@@ -41,6 +41,39 @@ export { generate } from './generate.js'
 export { securityPresets } from './security/presets.js'
 export type { SecurityConfig, SecurityPreset } from './types/index.js'
 
+// Plugins
+export {
+  registerPlugin,
+  unregisterPlugin,
+  enablePlugin,
+  disablePlugin,
+  getPlugin,
+  getPlugins,
+  clearPlugins,
+} from './plugins/index.js'
+export type {
+  SecurityPlugin,
+  RegisteredPlugin,
+  RegisterPluginOptions,
+  PluginMetadata,
+  PluginConfig,
+  PluginHooks,
+  PluginContext,
+  ValidationResult,
+  RateLimitResult,
+  PIIDetectionResult,
+  ModerationResult,
+  SecurityCheckResults,
+} from './plugins/index.js'
+export {
+  PluginPriority,
+  PluginError,
+  PluginInitializationError,
+  PluginValidationError,
+  PluginRateLimitError,
+  PluginModerationError,
+} from './plugins/index.js'
+
 // Providers
 export { createOpenAI, createAnthropic } from './providers/index.js'
 export { registerProvider } from './providers/registry.js'

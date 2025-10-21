@@ -3,9 +3,11 @@ import { securityPresets } from './presets.js'
 import { validateInput } from './validation.js'
 import { checkRateLimit } from './rate-limit.js'
 import { detectPII } from './pii.js'
+import { executeSecurityPlugins, getPlugins } from '../plugins/index.js'
 
 /**
  * Apply security middleware to generation options
+ * Integrates both built-in security checks and registered plugins
  */
 export async function applySecurityMiddleware(
   options: GenerateOptions
@@ -13,9 +15,23 @@ export async function applySecurityMiddleware(
   // Get security config
   const securityConfig = getSecurityConfig(options.security)
 
-  // Apply security checks
+  // Check if any plugins are registered
+  const hasPlugins = getPlugins().length > 0
+
+  if (hasPlugins) {
+    // Use plugin system (runs built-in checks + plugins)
+    const { options: modifiedOptions } = await executeSecurityPlugins(options, {
+      security: securityConfig,
+    })
+    return modifiedOptions
+  }
+
+  // Fallback: Run built-in checks only (for backward compatibility)
+  let currentOptions = options
+
+  // Apply built-in security checks
   if (securityConfig.inputValidation) {
-    validateInput(options, securityConfig.inputValidation)
+    validateInput(currentOptions, securityConfig.inputValidation)
   }
 
   if (securityConfig.rateLimiting) {
@@ -23,14 +39,14 @@ export async function applySecurityMiddleware(
   }
 
   if (securityConfig.piiDetection?.enabled) {
-    const prompt = getPromptText(options)
+    const prompt = getPromptText(currentOptions)
     const piiResult = detectPII(prompt)
 
     if (piiResult.detected) {
       if (securityConfig.piiDetection.redact) {
         // Redact PII from prompt
-        options = {
-          ...options,
+        currentOptions = {
+          ...currentOptions,
           prompt: piiResult.redacted,
         }
       } else {
@@ -44,10 +60,10 @@ export async function applySecurityMiddleware(
 
   // TODO: Add moderation check
   // if (securityConfig.moderation?.enabled) {
-  //   await checkModeration(options, securityConfig.moderation)
+  //   await checkModeration(currentOptions, securityConfig.moderation)
   // }
 
-  return options
+  return currentOptions
 }
 
 /**
