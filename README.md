@@ -21,6 +21,7 @@
   <a href="#quick-start">Quick Start</a> •
   <a href="#features">Features</a> •
   <a href="#examples">Examples</a> •
+  <a href="DEPLOYMENT.md">Deploy</a> •
   <a href="GETTING_STARTED.md">Documentation</a> •
   <a href="EXAMPLES.md">Live Demos</a> •
   <a href="CHANGELOG.md">Changelog</a>

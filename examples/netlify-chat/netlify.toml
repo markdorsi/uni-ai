@@ -1,5 +1,6 @@
 [build]
   publish = "public"
+  command = "cd ../.. && npm install && npm run build && cd examples/netlify-chat && npm install"
 
 [[edge_functions]]
   path = "/api/chat"
@@ -8,3 +9,8 @@
 [dev]
   framework = "#static"
   targetPort = 8888
+
+[context.production.environment]
+  # Environment variables are configured in the Netlify UI
+  # Required: OPENAI_API_KEY
+  # Optional: ANTHROPIC_API_KEY

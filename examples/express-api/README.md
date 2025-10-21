@@ -2,6 +2,16 @@
 
 A production-ready REST API built with Express and Uni AI SDK, demonstrating how to build secure AI-powered APIs with TypeScript.
 
+## 🚀 Deploy
+
+[![Deploy on Railway](https://railway.app/button.svg)](https://railway.app/template/uni-ai-express-api?referralCode=uni-ai)
+
+Click the button above to deploy this example to Railway in one click!
+
+**Alternative Platforms:**
+- [Deploy to Render](https://render.com/deploy?repo=https://github.com/markdorsi/uni-ai/tree/main/examples/express-api)
+- [Deploy to Fly.io](https://fly.io/docs/hands-on/install-flyctl/)
+
 ## Features
 
 - ✅ **RESTful API Design** - Clean, intuitive endpoints

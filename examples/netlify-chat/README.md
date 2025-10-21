@@ -2,6 +2,12 @@
 
 A beautiful, serverless chat application built with Netlify Edge Functions and Uni AI SDK, demonstrating edge computing with AI.
 
+## 🚀 Deploy
+
+[![Deploy to Netlify](https://www.netlify.com/img/deploy/button.svg)](https://app.netlify.com/start/deploy?repository=https://github.com/markdorsi/uni-ai&base=examples/netlify-chat)
+
+Click the button above to deploy this example to Netlify in one click!
+
 ## Features
 
 - ✅ **Edge Computing** - Runs on Netlify's global edge network

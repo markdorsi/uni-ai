@@ -1,0 +1,23 @@
+[build]
+builder = "nixpacks"
+buildCommand = "cd ../.. && npm install && npm run build && cd examples/express-api && npm install && npm run build"
+
+[deploy]
+startCommand = "npm start"
+restartPolicyType = "ON_FAILURE"
+restartPolicyMaxRetries = 10
+
+[[env]]
+name = "OPENAI_API_KEY"
+description = "OpenAI API key for GPT models"
+required = true
+
+[[env]]
+name = "ANTHROPIC_API_KEY"
+description = "Anthropic API key for Claude models (optional)"
+required = false
+
+[[env]]
+name = "PORT"
+description = "Port for the Express server"
+default = "3000"

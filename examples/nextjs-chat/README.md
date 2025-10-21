@@ -2,6 +2,12 @@
 
 A modern chat application built with Next.js 14 and Uni AI SDK, demonstrating how to build AI-powered conversational interfaces with security built-in.
 
+## 🚀 Deploy
+
+[![Deploy with Vercel](https://vercel.com/button)](https://vercel.com/new/clone?repository-url=https://github.com/markdorsi/uni-ai/tree/main/examples/nextjs-chat&env=OPENAI_API_KEY&envDescription=OpenAI%20API%20key%20for%20GPT%20models&project-name=uni-ai-chat&repository-name=uni-ai-chat&root-directory=examples/nextjs-chat)
+
+Click the button above to deploy this example to Vercel in one click!
+
 ## Features
 
 - ✅ **Multiple AI Models** - Switch between GPT-4, GPT-3.5 Turbo, and Claude 3.5 Sonnet
