@@ -1,0 +1,45 @@
+{
+  "name": "@uni-ai/netlify",
+  "version": "0.1.0",
+  "description": "Netlify adapters for Uni AI SDK",
+  "type": "module",
+  "main": "./dist/index.js",
+  "types": "./dist/index.d.ts",
+  "exports": {
+    ".": {
+      "import": "./dist/index.js",
+      "types": "./dist/index.d.ts"
+    }
+  },
+  "files": [
+    "dist"
+  ],
+  "scripts": {
+    "dev": "tsup --watch",
+    "build": "tsup",
+    "clean": "rm -rf dist"
+  },
+  "keywords": [
+    "ai",
+    "netlify",
+    "edge-functions",
+    "serverless",
+    "uni-ai"
+  ],
+  "author": "Uni AI",
+  "license": "MIT",
+  "peerDependencies": {
+    "@uni-ai/sdk": "^0.1.0"
+  },
+  "devDependencies": {
+    "@netlify/edge-functions": "^2.0.0",
+    "@uni-ai/sdk": "file:../core",
+    "tsup": "^8.0.1",
+    "typescript": "^5.3.3"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/uni-ai/sdk",
+    "directory": "packages/netlify"
+  }
+}
