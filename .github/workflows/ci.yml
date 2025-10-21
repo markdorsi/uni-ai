@@ -1,0 +1,148 @@
+name: CI
+
+on:
+  push:
+    branches: [main]
+  pull_request:
+    branches: [main]
+
+jobs:
+  test:
+    name: Test
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v4
+
+      - name: Setup Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: '18'
+          cache: 'npm'
+
+      - name: Install dependencies
+        run: npm ci
+
+      - name: Run tests
+        run: npm run test:ci
+        env:
+          # Use dummy API keys for testing
+          OPENAI_API_KEY: sk-test-dummy-key-for-ci
+          ANTHROPIC_API_KEY: sk-ant-test-dummy-key-for-ci
+
+      - name: Upload coverage reports
+        uses: codecov/codecov-action@v4
+        if: always()
+        with:
+          files: ./packages/core/coverage/coverage-final.json
+          flags: core
+          token: ${{ secrets.CODECOV_TOKEN }}
+        continue-on-error: true
+
+  typecheck:
+    name: Type Check
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v4
+
+      - name: Setup Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: '18'
+          cache: 'npm'
+
+      - name: Install dependencies
+        run: npm ci
+
+      - name: Type check core package
+        run: cd packages/core && npm run lint
+
+      - name: Type check react package
+        run: cd packages/react && npm run lint
+
+  build:
+    name: Build
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v4
+
+      - name: Setup Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: '18'
+          cache: 'npm'
+
+      - name: Install dependencies
+        run: npm ci
+
+      - name: Build core package
+        run: cd packages/core && npm run build
+
+      - name: Build react package
+        run: cd packages/react && npm run build
+
+      - name: Check build artifacts
+        run: |
+          test -f packages/core/dist/index.js || exit 1
+          test -f packages/core/dist/index.d.ts || exit 1
+          test -f packages/react/dist/index.js || exit 1
+          test -f packages/react/dist/index.d.ts || exit 1
+
+  bundle-size:
+    name: Bundle Size Check
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v4
+
+      - name: Setup Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: '18'
+          cache: 'npm'
+
+      - name: Install dependencies
+        run: npm ci
+
+      - name: Build packages
+        run: |
+          cd packages/core && npm run build
+          cd ../react && npm run build
+
+      - name: Check bundle sizes
+        run: |
+          echo "📦 Bundle Sizes:"
+          echo ""
+          echo "Core package (@uni-ai/sdk):"
+          ls -lh packages/core/dist/index.js | awk '{print "  index.js: " $5}'
+          echo ""
+          echo "React package (@uni-ai/react):"
+          ls -lh packages/react/dist/index.js | awk '{print "  index.js: " $5}'
+          echo ""
+
+          # Check if core bundle exceeds 20KB
+          CORE_SIZE=$(stat -f%z packages/core/dist/index.js 2>/dev/null || stat -c%s packages/core/dist/index.js)
+          CORE_KB=$((CORE_SIZE / 1024))
+          echo "Core bundle size: ${CORE_KB}KB (limit: 20KB)"
+
+          if [ $CORE_KB -gt 20 ]; then
+            echo "❌ Core bundle size exceeds 20KB limit!"
+            exit 1
+          fi
+
+          # Check if react bundle exceeds 5KB
+          REACT_SIZE=$(stat -f%z packages/react/dist/index.js 2>/dev/null || stat -c%s packages/react/dist/index.js)
+          REACT_KB=$((REACT_SIZE / 1024))
+          echo "React bundle size: ${REACT_KB}KB (limit: 5KB)"
+
+          if [ $REACT_KB -gt 5 ]; then
+            echo "⚠️  React bundle size exceeds 5KB limit (warning only)"
+          fi
+
+          echo "✅ Bundle size check passed!"

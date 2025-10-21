@@ -35,6 +35,7 @@
     "build:dts": "tsc --project tsconfig.build.json",
     "dev": "tsup --watch",
     "test": "vitest",
+    "test:ci": "vitest run",
     "test:coverage": "vitest --coverage",
     "lint": "tsc --noEmit",
     "clean": "rm -rf dist .turbo node_modules"

@@ -189,7 +189,7 @@ export function useCompletion(options: UseCompletionOptions): UseCompletionRetur
 
   const handleInputChange = useCallback(
     (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>) => {
-      setInput(e.target.value)
+      setInput((e.target as HTMLInputElement | HTMLTextAreaElement).value)
     },
     []
   )

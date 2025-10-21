@@ -1,6 +1,7 @@
 /**
  * Mock utilities for testing
  */
+import { vi } from 'vitest'
 
 /**
  * Mock fetch response
