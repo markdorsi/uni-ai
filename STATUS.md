@@ -155,7 +155,7 @@ Build the secure, platform-agnostic standard for AI applications.
 - **Bundle Sizes**: ✅ All within limits
 
 ### Example Applications
-✅ **Next.js Chat App**
+✅ **Next.js Chat App** (examples/nextjs-chat)
 - Modern Next.js 14 with App Router
 - Beautiful gradient UI with animations
 - Multiple AI models (GPT-4, GPT-3.5, Claude 3.5)
@@ -163,6 +163,15 @@ Build the secure, platform-agnostic standard for AI applications.
 - TypeScript + CSS Modules
 - Comprehensive README with deployment guide
 - Ready for Vercel/Netlify deployment
+
+✅ **Express REST API** (examples/express-api)
+- Production-ready REST API with TypeScript
+- Chat and completion endpoints
+- Security middleware (Helmet, CORS)
+- Error handling and validation
+- Health check endpoint
+- Hot reload development mode
+- Deployment guides (Railway, Render, Fly.io, Docker)
 
 ---
 
@@ -192,8 +201,8 @@ All Week 2 goals achieved:
 
 **Priority 2: Examples**
 - ✅ Next.js chat app
+- ✅ Express API example
 - [ ] Netlify Edge example
-- [ ] Express API example
 
 ### Week 3-4 (Oct 28 - Nov 10)
 
