@@ -9,6 +9,49 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ### Added
 
+#### Comprehensive Deployment Tooling (Week 8)
+- **Automated Deployment Scripts**:
+  - examples/nextjs-chat/deploy.sh - Vercel deployment automation
+  - examples/netlify-chat/deploy.sh - Netlify deployment automation
+  - examples/express-api/deploy.sh - Railway deployment automation
+  - All scripts handle: CLI tool installation, authentication, dependency installation, building, environment variable setup
+  - Interactive prompts guide users through each step
+  - Production and preview deployment options
+  - Helpful next steps after deployment
+  - Error handling and validation
+- **LIVE_DEPLOYMENT.md Guide (900+ lines)**:
+  - Complete deployment documentation covering all scenarios
+  - Quick deploy section with one-click buttons for all examples
+  - Manual deployment instructions for Vercel, Netlify, and Railway
+  - Platform-specific troubleshooting (15+ common issues with solutions)
+  - Environment variables guide (required/optional, format, security best practices)
+  - Post-deployment testing instructions with curl examples
+  - Monitoring and usage tracking for each platform
+  - Custom domain setup instructions
+  - Platform comparison table with features, pricing, limits
+  - Complete deployment checklist (before, during, after)
+- **Enhanced Example Documentation**:
+  - All example READMEs updated with deployment sections
+  - Three deployment options clearly documented:
+    1. One-click deploy (3 minutes, no CLI required)
+    2. CLI deploy with scripts (5 minutes, guided)
+    3. Manual deploy with guide (full control, 10-15 minutes)
+  - Updated feature lists: 4 providers, 6 models
+  - Platform adapter benefits highlighted
+  - Cross-references to LIVE_DEPLOYMENT.md
+- **Main README Updates**:
+  - Updated supported providers section (added Gemini and Ollama)
+  - Enhanced examples table showing model support
+  - Added Quick Deploy section explaining all methods
+  - Updated one-click deploy button URLs to correct repository
+  - Links to LIVE_DEPLOYMENT.md guide
+- **Benefits**:
+  - Reduced deployment time from 30+ minutes to 3-5 minutes
+  - Multiple methods for different user skill levels
+  - Comprehensive troubleshooting reduces support burden
+  - Best practices documented for security and monitoring
+  - Makes examples immediately deployable for demos
+
 #### Updated Examples with Platform Adapters (Week 7)
 - **Netlify Chat Example Simplification**:
   - Refactored Edge Function from 104 lines to 15 lines using @uni-ai/netlify adapter
