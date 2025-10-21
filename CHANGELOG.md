@@ -46,12 +46,44 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
   - Next steps guidance
 - **Bundle**: 6.39KB executable with shebang
 
+#### Deployment Infrastructure (Week 5)
+- **One-Click Deploy Buttons**: Ready-to-use deployment buttons
+  - Next.js Chat → Vercel deploy button in README
+  - Netlify Edge → Netlify deploy button in README
+  - Express API → Railway deploy button in README
+  - Direct integration with platform deployment UIs
+- **Platform Configuration Files**:
+  - vercel.json for Next.js example with build commands
+  - Enhanced netlify.toml with build and environment configuration
+  - railway.json and railway.toml for Express API
+  - Environment variable documentation in all configs
+- **DEPLOYMENT.md Guide**: 470+ line comprehensive deployment documentation
+  - Quick deploy section with one-click buttons for all examples
+  - Manual deployment instructions for all platforms
+  - Platform comparison table (Vercel, Netlify, Railway, Render, Fly.io)
+  - Security best practices for environment variables
+  - Troubleshooting section with common deployment issues
+  - Step-by-step CLI deployment instructions
+  - Build command configurations for monorepo structure
+- **Enhanced Example READMEs**:
+  - Deploy sections added to all 3 examples
+  - Clear environment variable requirements
+  - Alternative deployment platform options
+  - Next steps after deployment
+- **Platform Support**: 5 platforms with detailed instructions
+  - Vercel (best for Next.js)
+  - Netlify (best for edge/static)
+  - Railway (best for APIs)
+  - Render (alternative for APIs)
+  - Fly.io (global API deployment)
+
 ### Planned
+- Live demo deployments with public URLs
 - Google Gemini provider
 - Ollama provider (local models)
 - Streaming support in React hooks
 - Documentation website (VitePress)
-- Platform adapters (Netlify, Vercel)
+- Platform adapters (Netlify, Vercel packages)
 
 ---
 
