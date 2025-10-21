@@ -1,6 +1,8 @@
 import type { LanguageModelProvider } from '../types/index.js'
 import { createOpenAI } from './openai.js'
 import { createAnthropic } from './anthropic.js'
+import { GeminiProvider } from './gemini.js'
+import { OllamaProvider } from './ollama.js'
 
 /**
  * Provider registry
@@ -26,6 +28,24 @@ function registerDefaultProviders() {
   providers.set('claude-3-opus', anthropic) // Alias
   providers.set('claude-3-sonnet-20240229', anthropic)
   providers.set('claude-3-haiku-20240307', anthropic)
+
+  // Google Gemini models
+  const gemini = new GeminiProvider()
+  providers.set('gemini-2.0-flash', gemini)
+  providers.set('gemini-1.5-pro', gemini)
+  providers.set('gemini-1.5-flash', gemini)
+  providers.set('gemini-pro', gemini) // Alias for latest
+
+  // Ollama models (local)
+  const ollama = new OllamaProvider()
+  providers.set('llama3.2', ollama)
+  providers.set('llama3.1', ollama)
+  providers.set('llama2', ollama)
+  providers.set('mistral', ollama)
+  providers.set('mixtral', ollama)
+  providers.set('codellama', ollama)
+  providers.set('phi', ollama)
+  providers.set('qwen', ollama)
 }
 
 // Register on module load
