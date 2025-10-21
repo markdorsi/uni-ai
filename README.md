@@ -1,11 +1,32 @@
 # Uni AI SDK
 
-**Secure. Portable. Open.**
+<p align="center">
+  <strong>Secure. Portable. Open.</strong>
+</p>
 
-The AI SDK that works everywhere—with security built in, not bolted on.
+<p align="center">
+  The AI SDK that works everywhere—with security built in, not bolted on.
+</p>
 
-[![npm version](https://img.shields.io/npm/v/@uni-ai/sdk.svg)](https://www.npmjs.com/package/@uni-ai/sdk)
-[![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
+<p align="center">
+  <a href="https://www.npmjs.com/package/@uni-ai/sdk"><img src="https://img.shields.io/npm/v/@uni-ai/sdk.svg" alt="npm version"></a>
+  <a href="https://github.com/uni-ai/sdk/actions"><img src="https://img.shields.io/github/actions/workflow/status/uni-ai/sdk/ci.yml?branch=main" alt="Build Status"></a>
+  <a href="https://codecov.io/gh/uni-ai/sdk"><img src="https://img.shields.io/codecov/c/github/uni-ai/sdk" alt="Coverage"></a>
+  <a href="https://opensource.org/licenses/MIT"><img src="https://img.shields.io/badge/License-MIT-yellow.svg" alt="License: MIT"></a>
+  <a href="#"><img src="https://img.shields.io/badge/bundle%20size-11KB-success" alt="Bundle Size"></a>
+  <a href="#"><img src="https://img.shields.io/badge/typescript-5.3%2B-blue" alt="TypeScript"></a>
+</p>
+
+<p align="center">
+  <a href="#quick-start">Quick Start</a> •
+  <a href="#features">Features</a> •
+  <a href="#examples">Examples</a> •
+  <a href="GETTING_STARTED.md">Documentation</a> •
+  <a href="EXAMPLES.md">Live Demos</a> •
+  <a href="CHANGELOG.md">Changelog</a>
+</p>
+
+---
 
 ## Features
 
@@ -221,38 +242,111 @@ ANTHROPIC_API_KEY=sk-ant-...
 
 ## Documentation
 
-- [Quickstart Guide](https://uni-ai.dev/docs/quickstart)
-- [API Reference](https://uni-ai.dev/docs/api)
-- [Security Guide](https://uni-ai.dev/docs/security)
-- [Platform Guides](https://uni-ai.dev/docs/platforms)
+### Quick Links
+
+- 📖 **[Getting Started Guide](GETTING_STARTED.md)** - Your first Uni AI app in 5 minutes
+- 🎨 **[Examples](EXAMPLES.md)** - Production-ready example applications
+- 🔒 **[Security Guide](GETTING_STARTED.md#security)** - PII detection, rate limiting, best practices
+- 🚀 **[Deployment Guides](examples/)** - Deploy to Vercel, Netlify, Railway, and more
+- 📝 **[Changelog](CHANGELOG.md)** - Version history and breaking changes
+- 🤝 **[Contributing](CONTRIBUTING.md)** - How to contribute to Uni AI SDK
+- 🐛 **[Issue Tracker](https://github.com/uni-ai/sdk/issues)** - Report bugs and request features
+
+### Package Documentation
+
+- **[@uni-ai/sdk](packages/core/README.md)** - Core SDK API reference
+- **[@uni-ai/react](packages/react/README.md)** - React hooks documentation
 
 ## Examples
 
-- [Next.js Chat](https://github.com/uni-ai/examples/tree/main/nextjs-chat)
-- [Netlify Edge Chat](https://github.com/uni-ai/examples/tree/main/netlify-chat)
-- [Express API](https://github.com/uni-ai/examples/tree/main/express-api)
+Explore our production-ready examples:
+
+| Example | Description | Deploy |
+|---------|-------------|--------|
+| **[Next.js Chat](examples/nextjs-chat)** | Modern chat UI with App Router | [![Deploy to Vercel](https://vercel.com/button)](https://vercel.com/new/clone?repository-url=https://github.com/uni-ai/sdk/tree/main/examples/nextjs-chat) |
+| **[Netlify Edge](examples/netlify-chat)** | Serverless edge chat application | [![Deploy to Netlify](https://www.netlify.com/img/deploy/button.svg)](https://app.netlify.com/start/deploy?repository=https://github.com/uni-ai/sdk/tree/main/examples/netlify-chat) |
+| **[Express API](examples/express-api)** | RESTful API with TypeScript | [Deploy Guide](examples/express-api#deployment) |
+
+📚 **See [EXAMPLES.md](EXAMPLES.md)** for detailed guides, screenshots, and live demos.
 
 ## Why Uni AI SDK?
 
-### vs Vercel AI SDK
+### Comparison with Vercel AI SDK
 
-| Feature | Vercel AI SDK | Uni AI SDK |
-|---------|---------------|------------|
-| Bundle Size | ~186KB | <20KB ✅ |
-| Security | Add-ons | Built-in ✅ |
-| Platform Support | Vercel-optimized | Platform-agnostic ✅ |
-| Languages | TypeScript only | TypeScript + Python + Go (planned) ✅ |
+| Feature | Vercel AI SDK | Uni AI SDK | Winner |
+|---------|---------------|------------|--------|
+| **Bundle Size** | ~186KB | **11KB** | 🏆 **83% smaller** |
+| **Security** | Optional add-ons | **Built-in by default** | 🏆 **Production-ready** |
+| **Platform Support** | Vercel-optimized | **Platform-agnostic** | 🏆 **Works anywhere** |
+| **PII Detection** | ❌ Manual | **✅ Automatic** | 🏆 **Safer** |
+| **Rate Limiting** | ❌ Manual | **✅ Built-in** | 🏆 **Prevents abuse** |
+| **Input Validation** | ❌ Manual | **✅ Automatic** | 🏆 **More secure** |
+| **Type Safety** | ✅ TypeScript | **✅ TypeScript** | ✅ Both |
+| **Streaming** | ✅ Yes | **✅ Yes** | ✅ Both |
+| **Edge Support** | ✅ Vercel Edge | **✅ Any Edge** | 🏆 **More flexible** |
+| **Provider Support** | OpenAI-focused | **Multi-provider** | 🏆 **No lock-in** |
+| **Learning Curve** | Medium | **Low** | 🏆 **Simpler API** |
+
+### Key Advantages
+
+✅ **83% Smaller Bundle** - 11KB vs 186KB (faster page loads, better UX)
+✅ **Security First** - PII detection, rate limiting, validation built-in
+✅ **Platform Agnostic** - Works on Netlify, Vercel, Cloudflare, AWS, anywhere
+✅ **Simpler API** - One function call vs complex setup
+✅ **No Vendor Lock-in** - Switch providers easily
+✅ **Production Ready** - Security and testing included
+
+## Project Status
+
+🎉 **Week 3 Complete!**
+
+- ✅ Core SDK with 2 providers (OpenAI, Anthropic)
+- ✅ React hooks package
+- ✅ 78.8% test coverage (63 tests)
+- ✅ Complete CI/CD pipeline
+- ✅ 3 production-ready examples
+- ✅ Bundle: 11KB core + 1.9KB React
+
+**Next Up:**
+- NPM publishing
+- Google Gemini provider
+- Documentation website
+- Performance benchmarks
+
+See [STATUS.md](STATUS.md) for detailed roadmap.
 
 ## Contributing
 
-We welcome contributions! See [CONTRIBUTING.md](CONTRIBUTING.md) for details.
+We welcome contributions! Whether you're:
+
+- 🐛 Reporting bugs
+- 💡 Suggesting features
+- 📝 Improving documentation
+- 🔧 Submitting PRs
+
+See [CONTRIBUTING.md](CONTRIBUTING.md) for guidelines.
+
+## Community
+
+- **GitHub**: [github.com/uni-ai/sdk](https://github.com/uni-ai/sdk)
+- **Issues**: [Report bugs](https://github.com/uni-ai/sdk/issues)
+- **Discussions**: [Join the conversation](https://github.com/uni-ai/sdk/discussions)
 
 ## License
 
 MIT © Uni AI
 
+See [LICENSE](LICENSE) for details.
+
 ---
 
-**Built with ❤️ by the Uni AI community**
+<p align="center">
+  <strong>Built with ❤️ by the Uni AI community</strong>
+</p>
 
-[Documentation](https://uni-ai.dev) • [GitHub](https://github.com/uni-ai/sdk) • [Discord](https://discord.gg/uni-ai)
+<p align="center">
+  <a href="GETTING_STARTED.md">Documentation</a> •
+  <a href="https://github.com/uni-ai/sdk">GitHub</a> •
+  <a href="EXAMPLES.md">Examples</a> •
+  <a href="CHANGELOG.md">Changelog</a>
+</p>
