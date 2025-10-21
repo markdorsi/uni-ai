@@ -45,18 +45,33 @@ export function createOpenAI(options?: ProviderOptions): LanguageModelProvider {
       })
 
       if (!response.ok) {
-        const error = await response.json()
+        const error = (await response.json()) as {
+          error?: { message?: string }
+        }
         throw new OpenAIError(
           error.error?.message || 'OpenAI API request failed',
           error
         )
       }
 
-      const data = await response.json()
+      const data = (await response.json()) as {
+        choices: Array<{
+          message: { content: string | null }
+          finish_reason: string
+        }>
+        usage: {
+          prompt_tokens: number
+          completion_tokens: number
+          total_tokens: number
+        }
+      }
       const choice = data.choices[0]
+      if (!choice) {
+        throw new Error('No choices returned from OpenAI API')
+      }
 
       return {
-        text: choice.message.content,
+        text: choice.message.content ?? '',
         usage: {
           inputTokens: data.usage.prompt_tokens,
           outputTokens: data.usage.completion_tokens,
@@ -84,7 +99,9 @@ export function createOpenAI(options?: ProviderOptions): LanguageModelProvider {
       })
 
       if (!response.ok) {
-        const error = await response.json()
+        const error = (await response.json()) as {
+          error?: { message?: string }
+        }
         throw new OpenAIError(
           error.error?.message || 'OpenAI API request failed',
           error

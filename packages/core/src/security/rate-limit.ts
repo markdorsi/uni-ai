@@ -36,7 +36,8 @@ export async function checkRateLimit(
   if (config.maxRequestsPerMinute) {
     const recentRequests = entry.requests.filter(time => time > oneMinuteAgo)
     if (recentRequests.length >= config.maxRequestsPerMinute) {
-      const resetIn = Math.ceil((entry.requests[0] + 60 * 1000 - now) / 1000)
+      const oldestRequest = entry.requests[0] ?? now
+      const resetIn = Math.ceil((oldestRequest + 60 * 1000 - now) / 1000)
       throw new RateLimitError(
         'Rate limit exceeded (per minute)',
         {
@@ -51,7 +52,8 @@ export async function checkRateLimit(
   // Check hour limit
   if (config.maxRequestsPerHour) {
     if (entry.requests.length >= config.maxRequestsPerHour) {
-      const resetIn = Math.ceil((entry.requests[0] + 60 * 60 * 1000 - now) / 1000)
+      const oldestRequest = entry.requests[0] ?? now
+      const resetIn = Math.ceil((oldestRequest + 60 * 60 * 1000 - now) / 1000)
       throw new RateLimitError(
         'Rate limit exceeded (per hour)',
         {

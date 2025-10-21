@@ -6,7 +6,7 @@ export default defineConfig({
     'providers/index': 'src/providers/index.ts',
   },
   format: ['esm'],
-  dts: false, // Temporarily disabled - will fix later
+  dts: false, // Generated separately via tsc
   clean: true,
   sourcemap: true,
   minify: true,

@@ -42,7 +42,7 @@ export { securityPresets } from './security/presets.js'
 export type { SecurityConfig, SecurityPreset } from './types/index.js'
 
 // Providers
-export { openai } from './providers/index.js'
+export { createOpenAI } from './providers/index.js'
 export { registerProvider } from './providers/registry.js'
 
 // Types
