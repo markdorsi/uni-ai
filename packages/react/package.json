@@ -1,0 +1,64 @@
+{
+  "name": "@uni-ai/react",
+  "version": "0.1.0",
+  "description": "React hooks and components for Uni AI SDK",
+  "keywords": [
+    "ai",
+    "react",
+    "hooks",
+    "openai",
+    "anthropic",
+    "chat",
+    "streaming"
+  ],
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/markdorsi/uni-ai",
+    "directory": "packages/react"
+  },
+  "license": "MIT",
+  "author": "Uni AI",
+  "type": "module",
+  "exports": {
+    ".": {
+      "types": "./dist/index.d.ts",
+      "import": "./dist/index.js"
+    }
+  },
+  "main": "./dist/index.js",
+  "types": "./dist/index.d.ts",
+  "files": [
+    "dist"
+  ],
+  "scripts": {
+    "build": "tsup && npm run build:dts",
+    "build:dts": "tsc --project tsconfig.build.json",
+    "dev": "tsup --watch",
+    "test": "vitest",
+    "test:coverage": "vitest --coverage",
+    "lint": "tsc --noEmit",
+    "clean": "rm -rf dist .turbo node_modules"
+  },
+  "dependencies": {
+    "@uni-ai/sdk": "file:../core"
+  },
+  "devDependencies": {
+    "@testing-library/react": "^14.1.2",
+    "@testing-library/react-hooks": "^8.0.1",
+    "@types/react": "^18.2.45",
+    "@types/node": "^20.11.0",
+    "@vitest/coverage-v8": "^3.2.4",
+    "@vitest/ui": "^3.2.4",
+    "react": "^18.2.0",
+    "react-dom": "^18.2.0",
+    "tsup": "^8.0.1",
+    "typescript": "^5.3.3",
+    "vitest": "^3.2.4"
+  },
+  "peerDependencies": {
+    "react": "^18.0.0"
+  },
+  "engines": {
+    "node": ">=18.0.0"
+  }
+}
