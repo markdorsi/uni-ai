@@ -2,7 +2,7 @@
 
 **Last Updated**: 2025-10-20
 **Version**: 0.1.0-alpha
-**Status**: Week 6 Complete! 🎉
+**Status**: Week 7 Complete! 🎉
 
 ---
 
@@ -416,6 +416,40 @@ Build the secure, platform-agnostic standard for AI applications.
 - **Code Added**: 443 lines
 - **Local Support**: ✅ (via Ollama)
 - **Google AI Support**: ✅ (via Gemini)
+
+---
+
+## ✅ Completed (Week 7 - Updated Examples)
+
+### Example Simplification with Platform Adapters
+✅ **Netlify Chat Example Updates**
+- Simplified Edge Function from 104 lines to 15 lines using @uni-ai/netlify
+- Replaced manual request validation, parsing, and error handling
+- Added @uni-ai/netlify dependency
+- Added Gemini (gemini-2.0-flash, gemini-pro) model options
+- Added Ollama (llama3.2) model option
+- Improved model labels with provider names
+
+✅ **Next.js Chat Example Updates**
+- Simplified API route from 51 lines to 15 lines using @uni-ai/vercel
+- Added Edge Runtime support (export const runtime = 'edge')
+- Replaced manual NextResponse handling with adapter
+- Added @uni-ai/vercel dependency
+- Added Gemini (gemini-2.0-flash, gemini-pro) model options
+- Added Ollama (llama3.2) model option
+- Type-safe model selection in React component
+
+### Platform Adapter Demonstration
+- Examples now showcase the value of Week 5's platform adapters
+- Demonstrates best practices for deploying Uni AI SDK
+- Shows dramatic code reduction (89% and 71% respectively)
+- Multi-provider support: OpenAI, Anthropic, Google, Ollama
+
+### Metrics
+- **Code Reduction**: 104→15 lines (Netlify), 51→15 lines (Next.js)
+- **Models Supported**: 6 models across 4 providers
+- **Files Updated**: 6 files across both examples
+- **Bundle Impact**: No increase (adapters already built)
 
 ---
 

@@ -9,6 +9,38 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ### Added
 
+#### Updated Examples with Platform Adapters (Week 7)
+- **Netlify Chat Example Simplification**:
+  - Refactored Edge Function from 104 lines to 15 lines using @uni-ai/netlify adapter
+  - Replaced manual request validation, body parsing, error handling, and response formatting
+  - Added @uni-ai/netlify as dependency
+  - Demonstrates createEdgeHandler() best practices
+  - Added Google Gemini models (gemini-2.0-flash, gemini-pro)
+  - Added Ollama support (llama3.2)
+  - Improved model labels to show provider names (OpenAI, Anthropic, Google, Ollama)
+  - 89% code reduction while maintaining all functionality
+- **Next.js Chat Example Simplification**:
+  - Refactored API route from 51 lines to 15 lines using @uni-ai/vercel adapter
+  - Added Edge Runtime support with `export const runtime = 'edge'`
+  - Replaced NextRequest/NextResponse handling with createEdgeHandler()
+  - Added @uni-ai/vercel as dependency
+  - Demonstrates Next.js 14 App Router best practices
+  - Added Google Gemini models (gemini-2.0-flash, gemini-pro)
+  - Added Ollama support (llama3.2)
+  - Type-safe model selection in Chat component
+  - 71% code reduction while maintaining all functionality
+- **Multi-Provider Showcase**:
+  - Both examples now demonstrate 4 providers: OpenAI, Anthropic, Google, Ollama
+  - 6 model options: GPT-4, GPT-3.5 Turbo, Claude 3.5 Sonnet, Gemini 2.0 Flash, Gemini Pro, Llama 3.2
+  - Shows platform-agnostic nature of Uni AI SDK
+  - Demonstrates value of platform adapter packages
+- **Benefits**:
+  - Dramatically simplified code while maintaining security and functionality
+  - Showcases Week 5 platform adapters in real examples
+  - Best practice demonstration for new users
+  - Easier to understand and maintain
+  - No bundle size increase (adapters already built in Week 5)
+
 #### NPM Publishing Infrastructure (Week 4)
 - **GitHub Actions Workflow**: Automated NPM publishing on release
   - Manual workflow dispatch support
