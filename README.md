@@ -21,10 +21,13 @@
   <a href="#quick-start">Quick Start</a> •
   <a href="#features">Features</a> •
   <a href="#examples">Examples</a> •
+  <a href="docs/">Documentation</a> •
   <a href="DEPLOYMENT.md">Deploy</a> •
-  <a href="GETTING_STARTED.md">Documentation</a> •
-  <a href="EXAMPLES.md">Live Demos</a> •
   <a href="CHANGELOG.md">Changelog</a>
+</p>
+
+<p align="center">
+  <strong>📚 <a href="docs/">Full Documentation</a> | 🚀 <a href="LIVE_DEPLOYMENT.md">Deploy Guide</a> | 💬 <a href="https://github.com/markdorsi/uni-ai/discussions">Discussions</a></strong>
 </p>
 
 ---
